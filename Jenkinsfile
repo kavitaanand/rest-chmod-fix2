@@ -40,7 +40,7 @@ pipeline{
             }
         }
 
-            stage('deploy'){
+          
                 stage('deploy'){
                 steps{
                     echo 'Deployment in progress............'
