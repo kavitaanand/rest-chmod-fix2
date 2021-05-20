@@ -2,7 +2,7 @@ pipeline{
     agent any
     tools {
         /**This is configured with this exact name in 'Manage Jenkins > Global Tool Configuration > Maven'*/
-        maven 'maven_3_6_3'
+        maven 'maven_3_6_9'
     }
 
     stages {
@@ -10,7 +10,7 @@ pipeline{
         stage('build'){
             steps{
                 echo 'Building............'
-                withMaven(maven: 'maven_3_6_3'){
+                withMaven(maven: 'maven_3_6_4'){
                     sh 'mvn clean compile'
                 }
             }
@@ -18,7 +18,7 @@ pipeline{
         stage('test'){
             steps{
                 echo 'Running tests............'
-                withMaven(maven: 'maven_3_6_3'){
+                withMaven(maven: 'maven_3_6_8'){
                     sh 'mvn test'
                     sh 'mvn surefire-report:report'
                 }
